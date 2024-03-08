@@ -1,0 +1,65 @@
+{
+  "name": "web_wechat",
+  "productName": "WebWeChat",
+  "author": {
+    "name": "GitOPEN",
+    "email": "gitopen@gmail.com"
+  },
+  "version": "1.0.1",
+  "description": "Web WeChat",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "electron": "^19.0.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-store": "^8.1.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "appVersion": "1.0.0",
+        "name": "Web WeChat",
+        "appCopyright": "GitOPEN(gitopen@gmail.com)",
+        "icon": "/home/gitopen/Syncthing/Projects/WebProjects/webwechat/assets/img/appIcon/appicon.png",
+        "executableName": "web_wechat"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "com.sunjiajia.web_wechat"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "options": {
+              "maintainer": "GitOPEN",
+              "homepage": "https://sunjiajia.com",
+              "icon": "/home/gitopen/Syncthing/Projects/WebProjects/webwechat/assets/img/appIcon/appicon.png"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

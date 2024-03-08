@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Web WeChat</title>
+    <script></script>
+    <style type="text/css">
+      html {
+        /* 解决页面会出现双滚动条问题。overflow: hidden; 溢出隐藏，给一个元素中设置overflow: hidden，那么该元素的内容若超出了给定的宽度和高度属性，那么超出的部分将会被隐藏，不占位。 */
+        overflow: hidden;
+      }
+      body {
+        /* 解决页面上下左右会出现空白问题。让外框的外边距和内边距都为0 */
+        margin: 0;
+        padding: 0;
+      }
+      #iframepage {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe
+      src="https://wx2.qq.com/"
+      id="iframepage"
+      scrolling="auto"
+      frameborder="0"
+      onload="changeFrameHeight()"
+    ></iframe>
+    <!-- 以下JS部分是让iframe自适应高度，兼容多种浏览器 -->
+    <script type="text/javascript">
+      function changeFrameHeight() {
+        var ifm = document.getElementById("iframepage");
+        ifm.height = document.documentElement.clientHeight;
+      }
+      window.onresize = function () {
+        changeFrameHeight();
+      };
+      setInterval(function () {
+        angular.element("pre:last").scope().editAreaCtn = "";
+        angular.element("pre:last").scope().sendTextMessage();
+      }, 1 * 600 * 1000);
+    </script>
+  </body>
+</html>
