@@ -4,7 +4,7 @@
 
 # 简要说明
 
-`out/make/`文件夹下的`zip/`中包含了**macOS**的安装包；`deb/`中包含了**Ubuntu**的安装包；
+`https://github.com/opengit/WebWeChat/releases`下载安装包安装。
 
 # 安装
 
